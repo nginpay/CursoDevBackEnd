@@ -16,6 +16,16 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 
+app.get('/', (req, res) => {
+  const data = {
+    uptime: process.uptime(),
+    message: 'Ok',
+    date: new Date()
+  }
+
+  res.status(200).send(data);
+})
+
 require("./routes/app.routes")(app);
 
 const PORT = process.env.PORT || 3000;
