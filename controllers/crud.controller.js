@@ -30,7 +30,7 @@ exports.getAll = async (req, res) => {
 exports.getOne = async (req, res) => {
     const Id = req.params.id;
     const UserDetails = await Users.findOne({where: {id:Id}})
-    res.status(200).json({UserDetails});
+    res.status(200).json(UserDetails);
 };
 
 exports.update = async (req, res) => {
